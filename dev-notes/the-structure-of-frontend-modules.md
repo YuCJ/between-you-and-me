@@ -62,13 +62,15 @@
   - consumer 使用的 interface 已經確定不太會改
   - 很少和其他套件有重複的 code
   - 不太需要跟其他 module 一起測試
+
 - 或是 dependencies 中有需要在 npm install hook build binary 的套件，應該要獨立切出來，減少不必要的 npm install 時間（ex: `node-sass`）
+
 - 適合作成獨立 packages 的例子：
   - @twreporter/redux：consumer 只使用 `createStore()` 創造 instance 來使用
   - @twreporter/react-components/cinemagraph：
   - @twreporter/react-components/fullpage-slide
 
-- @twreporter/react-components、@twreporter/article-components、@twreporter/utils…
+- 其他套件的兩種方案（@twreporter/react-components、@twreporter/article-components、@twreporter/utils… ）
   - multi-packages、mono-repo
     - @twreporter/article-components, @twreporter/site-components, @twreporter/universal-header, @twreporter/bookmark-widget, @twreporter/utils/media-query….
     - 優點：不會浪費時間跑多餘的測試、consumer 只需要安裝要用的部分

@@ -53,8 +53,8 @@
 |                         | multi-packages                                               | single-package                                               |
 | ----------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | dependencies 的版本管理 | 要處理同步各套件使用的 libraries 版本一致，例如都要用同一個版本的 `react` | **用同一份 package.json**                                    |
-| dependencies            | 無論在 dev 或 prod，都只需要安裝使用到的 dependencies。但缺點是在 dev 時，如果同時開發多個 package，可能會有重複的 dependencies 被安裝在每個 repo，需要使用 monorepo 的管理工具解決。 | 要開發一個 part 卻要安裝全部的 dependencies                  |
-| development & refactor  | 跨套件開發時需要  `yarn link` 數個 packages，如果 packages 之間互相有依賴會很麻煩，需要用 monorepo 解決。 | **`yarn link` 一個 package**                                 |
+| dependencies            | **無論在 dev 或 prod，都只需要安裝使用到的 dependencies。**但缺點是在 dev 時，如果同時開發多個 package，可能會有重複的 dependencies 被安裝在每個 repo，需要使用 monorepo 的管理工具解決。 | 要開發一個 part 卻要安裝全部的 dependencies。但在 dev 時也，就算要開發不同 part ，也只會安裝一份。                  |
+| development & refactor  | 跨套件開發時需要  `yarn link` 數個 packages，如果 packages 之間互相有依賴會很麻煩，需要用 monorepo 解決。 | **只需要 `yarn link` 一個 package**                                 |
 | testing                 | **只要跑開發到的套件的測試，時間較短**。但跨套件測試較麻煩，需要透過 monorepo 解決。 | 任何部分的改動都可能要跑全部測試。但**跨越不同部分的測試較容易**。 |
 | 套件區分                | 切分時需要思考要怎麼分套件，而且之後若要調動套件區分成本較高 | 需要思考套件內的資料夾結構和 build 出來給外部使用的 interface |
 

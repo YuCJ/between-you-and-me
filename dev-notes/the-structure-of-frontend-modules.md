@@ -83,5 +83,6 @@
   - @twreporter/article-components, @twreporter/site-components, @twreporter/universal-header, @twreporter/bookmark-widget, @twreporter/utils/media-query….
   - 優點：不會浪費時間跑多餘的測試、consumer 只需要安裝要用的部分
   - 缺點：consumer 如果安裝多個不同套件有可能有 duplicate code 造成 bundle size 變大，需要多一個管理工具（如 `lerna`）、package 切分完成後不太能改動
+  - 範例：https://github.com/braxtonchristensen/react-monorepo
 - single-package、mono-repo
   - @twreporter/core/components/article, @twreporter/core/components/header, @twreporter-react/core/components/bookmark-widget, @twreporter/core/utils/media-query…
